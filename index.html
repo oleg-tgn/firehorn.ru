@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Horn League</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- The video -->
+    
+  
+  <!-- Optional: some overlay text to describe the video -->
+  <div class="video-content">
+    <video autoplay muted loop id="myVideo">
+        <source src="top_moments_short.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-description">
+        <h1 class="video__title">Fire Horn League</h1>
+        <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <button class="button" id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tournament-content">    
+        <table class="tournament__table">
+            <h1 class="title">Проведенные турниры</h1>
+            <tr class="tournament__row">
+                <td class="tournament__column tournament__date-column">
+                    <span class="tournament__day">11.01</span>               
+                    <span class="tournament__year">2020</span>
+                </td>
+                <td class="tournament__column">
+                    #3 Lan турнир Inostudio, ИКТИБ<br> г. Таганрог<br>
+                    <a href="https://vk.com/album-186885826_271302925" target="_blank">Фотоальбом #3</a>     
+                </td>
+            </tr>
+            <tr class="tournament__row">
+                <td class="tournament__column tournament__date-column">
+                    <span class="tournament__day">30.11</span>                
+                    <span class="tournament__year">2019</span>
+                </td>
+                <td class="tournament__column">
+                    #2 Lan турнир Мармелад<br> г. Таганрог<br>
+                    <a href="https://challonge.com/ru/rjvj5bhv" target="_blank">Турнирная таблица #2</a><br>
+                    <a href="https://vk.com/album-186885826_270659157" target="_blank">Фотоальбом #2</a>                   
+                </td>
+            </tr>
+            <tr class="tournament__row">
+                <td class="tournament__column tournament__date-column">
+                    <span class="tournament__day">5.10</span>                
+                    <span class="tournament__year">2019</span>
+                </td>
+                <td class="tournament__column">
+                    #1 Lan турнир Cyber Club<br> г. Таганрог<br>
+                    <a href="https://challonge.com/ru/1wuf76fr" target="_blank">Турнирная таблица #1</a><br>
+                    <a href="https://vk.com/album-186885826_268453002" target="_blank">Фотоальбом #1</a>                   
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
