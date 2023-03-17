@@ -5,23 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire Horn League</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- The video -->
-    
-  
+
+    <header class="navbar">
+        <div class="navbar__container">
+            <div class="navbar__logo">
+                <img src="img/icons/logo.svg" alt="" class="navbar__logo-icon">
+            </div>
+            <div class="navbar__description">
+                Сообщество игроков League of Legends 
+                Таганрога и области
+            </div>
+            <ul class="navbar-socials">
+                <li class="navbar-socials__item">
+                    <a class="navbar-socials__link" href="https://vk.com/firehorn" target="_blank"><img class="navbar-socials__icon" src="img/icons/vk.svg" alt=""></a>
+                </li>
+                <li class="navbar-socials__item">
+                    <a class="navbar-socials__link" href="https://www.youtube.com/@firehornleague679" target="_blank"><img class="navbar-socials__icon" src="img/icons/youtube.svg" alt=""></a>
+                </li>
+                <li class="navbar-socials__item">
+                    <a class="navbar-socials__link" href="https://www.instagram.com/firehornleague/" target="_blank"><img class="navbar-socials__icon" src="img/icons/instagram.svg" alt=""></a>
+                </li>
+                <li class="navbar-socials__item">
+                    <a class="navbar-socials__link" href="https://discord.com/invite/TaNjrHm" target="_blank"><img class="navbar-socials__icon" src="img/icons/discord.svg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </header>
   <!-- Optional: some overlay text to describe the video -->
   <div class="video-content">
+
     <video autoplay muted loop id="myVideo">
         <source src="top_moments_short.mp4" type="video/mp4">
     </video>
 
-    <div class="video-description">
-        <h1 class="video__title">Fire Horn League</h1>
-        <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-        <!-- Use a button to pause/play the video with JavaScript -->
-        <button class="button" id="myBtn" onclick="myFunction()">Pause</button>
+    <div class="video">
+        <div class="video__description">
+            <p class="video__description-text">3 года турниров, совместных просмотров чемпионатов
+                и просто душевных встреч
+            </p>
+            <p class="video__description-text">
+                Присоединяйся!
+            </p>
+            <button class="video__button button" id="myBtn" onclick="playPause()">
+                <img class="video__button-icon" src="img/icons/pause-solid.svg" alt="pause" id="pause">
+                <img class="video__button-icon"src="img/icons/play-solid.svg" alt="play" id="play" style="display: none;">
+            </button>
+        </div>  
     </div>
   </div>
 

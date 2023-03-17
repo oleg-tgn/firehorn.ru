@@ -1,15 +1,19 @@
 var video = document.getElementById("myVideo");
 
 // Get the button
-var btn = document.getElementById("myBtn");
+let btn = document.getElementById("myBtn");
+let play = document.getElementById("play");
+let pause = document.getElementById("pause");
 
 // Pause and play the video, and change the button text
-function myFunction() {
+function playPause() {
     if (video.paused) {
         video.play();
-        btn.innerHTML = "Pause";
+        play.style.display = "none";
+        pause.style.display = "block";
     } else {
         video.pause();
-        btn.innerHTML = "Play";
+        play.style.display = "block";
+        pause.style.display = "none";
     }
 }
