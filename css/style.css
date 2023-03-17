@@ -32,6 +32,31 @@ body {
   margin-top: 70px;
   min-height: 450px;
   overflow: hidden;
+  /* WebKit styles */
+  /* Firefox styles */
+}
+.video-content__controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.video-content__progress {
+  width: 100%;
+  height: 8px;
+}
+.video-content progress[value] {
+  appearance: none; /* Needed for Safari */
+  border: none; /* Needed for Firefox */
+  color: #e52e71; /* Fallback to a solid color */
+}
+.video-content progress[value]::-webkit-progress-value {
+  background: #fff;
+  transition: width 1s linear;
+}
+.video-content progress[value]::-moz-progress-bar {
+  background: #fff;
 }
 
 #myVideo {
@@ -170,5 +195,7 @@ body {
   font-size: 40px;
   margin-bottom: 20px;
 }
+
+/* Fallback stuff */
 
 /*# sourceMappingURL=style.css.map */

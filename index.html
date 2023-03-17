@@ -36,10 +36,15 @@
     </header>
   <!-- Optional: some overlay text to describe the video -->
   <div class="video-content">
-
-    <video autoplay muted loop id="myVideo">
-        <source src="top_moments_short.mp4" type="video/mp4">
-    </video>
+    <figure>
+        <video autoplay muted loop id="myVideo">
+            <source src="top_moments_short.mp4" type="video/mp4">
+        </video>
+        <figcaption class="video-content__controls">
+            <!-- <button id="play" aria-label="Play" role="button">►</button> -->
+            <progress class="video-content__progress" id="progress" max="100" value="0">Progress</progress>
+        </figcaption>
+    </figure>
 
     <div class="video">
         <div class="video__description">
