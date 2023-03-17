@@ -68,7 +68,11 @@ body {
         background: #fff;
         transition: width 1s linear;
     }
-    
+
+    // progress[value="0"]::-webkit-progress-value {
+    //     transition: none;
+    // }
+ 
     /* Firefox styles */
     progress[value]::-moz-progress-bar {
         background: #fff;
