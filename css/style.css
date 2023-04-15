@@ -108,7 +108,7 @@ body {
   text-align: center;
 }
 .stopwar:hover .blue {
-  color: rgb(0, 91, 171);
+  color: rgb(100, 150, 255);
 }
 .stopwar:hover .yellow {
   color: rgb(255, 215, 0);
