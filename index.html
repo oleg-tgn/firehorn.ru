@@ -46,6 +46,11 @@
         </figcaption>
     </figure>
 
+    <button class="video__button button" id="myBtn" onclick="playPause()">
+        <img class="video__button-icon" src="img/icons/pause-solid.svg" alt="pause" id="pause">
+        <img class="video__button-icon"src="img/icons/play-solid.svg" alt="play" id="play" style="display: none;">
+    </button>
+
     <div class="video">
         <div class="video__description">
             <p class="video__description-text">3 года турниров, совместных просмотров чемпионатов
@@ -54,10 +59,6 @@
             <p class="video__description-text">
                 Присоединяйся!
             </p>
-            <button class="video__button button" id="myBtn" onclick="playPause()">
-                <img class="video__button-icon" src="img/icons/pause-solid.svg" alt="pause" id="pause">
-                <img class="video__button-icon"src="img/icons/play-solid.svg" alt="play" id="play" style="display: none;">
-            </button>
         </div>  
     </div>
   </div>
@@ -65,6 +66,13 @@
   
 <div class="tournaments">  
     <h1 class="title">Проведенные турниры</h1>
+
+    <div id="root">
+        <!-- This element's contents will be replaced with your component. -->
+    </div>
+    <div id="like_button_container"></div>
+    
+
     <div class="tournament">
         <div class="tournament__column tournament__image-column">
             <span class="tournament__image" style="background-image: url('img/tournament-3.jpg');">
@@ -116,6 +124,13 @@
     </div>
 </div>
 
-<script src="main.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+
+    <script src="js/tournaments.js"></script>
+
 </body>
 </html>

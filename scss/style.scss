@@ -103,7 +103,8 @@ body {
         display: flex;
         align-items: center;
         width: 100%;
-        max-width: 1800px;
+        max-width: 1900px;
+        padding: 0 50px;
         margin: 0 auto;
     }
 
@@ -164,15 +165,16 @@ body {
     }
 
     &__button {
+        position: absolute;
+        bottom: 80px;
+        left: 25px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         border: none;        
         background: transparent;
         text-align: center;
+        z-index: 20;
 
         &:hover {
             background: rgba(255, 255, 255, 0.1);
@@ -181,7 +183,7 @@ body {
     }
 
     &__button-icon {
-        width: 30px;
+        width: 25px;
         margin: auto;
     }
 }
