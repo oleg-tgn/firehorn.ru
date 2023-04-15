@@ -96,6 +96,21 @@ body {
   max-width: 250px;
   margin-right: auto;
 }
+.navbar__stopwar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.navbar__stopwar:hover .blue {
+  color: rgb(0, 91, 171);
+}
+.navbar__stopwar:hover .yellow {
+  color: rgb(255, 215, 0);
+}
 
 .socials {
   display: flex;
@@ -251,7 +266,7 @@ body {
   color: #2E4CA4;
   text-decoration: none;
   background: transparent;
-  transition: background 0.2s ease;
+  transition: background 0.3s ease;
 }
 .tournament-button:hover {
   background: #D2DBF5;

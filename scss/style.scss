@@ -118,6 +118,26 @@ body {
         max-width: 250px;
         margin-right: auto;
     }
+
+    &__stopwar {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            .blue {
+                color: rgba(0, 91, 171);
+            }
+            
+            .yellow {
+                color: rgb(255, 215, 0);
+            }
+        }
+    }
 }
 
 .socials {
@@ -294,7 +314,7 @@ body {
     color: #2E4CA4;
     text-decoration: none;
     background: transparent;
-    transition: background 0.2s ease;
+    transition: background 0.3s ease;
 
     &:hover {
         background: #D2DBF5;
