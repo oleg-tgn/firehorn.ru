@@ -1,46 +1,90 @@
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+function Tournament(props) {
+  var tornament = props.tornament;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+  var imageStyle = {
+    backgroundImage: 'url(' + tornament.image + ')'
+  };
+  // Правильно! Не нужно определять здесь ключ:
+  return React.createElement(
+    'div',
+    { className: 'tournament' },
+    React.createElement(
+      'div',
+      { className: 'tournament__column tournament__image-column' },
+      React.createElement('span', { className: 'tournament__image', style: imageStyle })
+    ),
+    React.createElement(
+      'div',
+      { className: 'tournament__column' },
+      React.createElement(
+        'h3',
+        { className: 'tournament__title' },
+        React.createElement(
+          'span',
+          { className: 'tournament__num' },
+          tornament.number
+        ),
+        tornament.title
+      ),
+      React.createElement(
+        'div',
+        { className: 'tournament__desc' },
+        React.createElement(
+          'span',
+          { className: 'tournament__date' },
+          tornament.date
+        ),
+        React.createElement(
+          'span',
+          { className: 'tournament__location' },
+          tornament.address
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'tournament__buttons' },
+        React.createElement(
+          'a',
+          { className: 'tournament-button', href: tornament.links.video, target: '_blank' },
+          React.createElement('span', { className: 'icon icon-photo' }),
+          '\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430'
+        ),
+        React.createElement(
+          'a',
+          { className: 'tournament-button', href: tornament.links.table, target: '_blank' },
+          React.createElement('span', { className: 'icon icon-photo' }),
+          '\u0422\u0443\u0440\u043D\u0438\u0440\u043D\u0430\u044F \u0442\u0430\u0431\u043B\u0438\u0446\u0430'
+        ),
+        React.createElement(
+          'a',
+          { className: 'tournament-button', href: tornament.links.teams, target: '_blank' },
+          React.createElement('span', { className: 'icon icon-photo' }),
+          '\u041A\u043E\u043C\u0430\u043D\u0434\u0430'
+        ),
+        React.createElement(
+          'a',
+          { className: 'tournament-button', href: tornament.links.photo, target: '_blank' },
+          React.createElement('span', { className: 'icon icon-photo' }),
+          '\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C'
+        )
+      )
+    )
+  );
+}
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function TournamentsList(props) {
+  var tornaments = props.tornaments;
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+  return React.createElement(
+    'ul',
+    null,
+    tornaments.map(function (tornament) {
+      return React.createElement(Tournament, { tornament: tornament, key: tornament.number.toString() });
+    })
+  );
+}
 
-var LikeButton = function (_React$Component) {
-  _inherits(LikeButton, _React$Component);
-
-  function LikeButton(props) {
-    _classCallCheck(this, LikeButton);
-
-    var _this = _possibleConstructorReturn(this, (LikeButton.__proto__ || Object.getPrototypeOf(LikeButton)).call(this, props));
-
-    _this.state = { liked: false };
-    return _this;
-  }
-
-  _createClass(LikeButton, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      if (this.state.liked) {
-        return 'You liked this.';
-      }
-
-      return React.createElement(
-        'button',
-        { onClick: function onClick() {
-            return _this2.setState({ liked: true });
-          } },
-        'Like'
-      );
-    }
-  }]);
-
-  return LikeButton;
-}(React.Component);
-
-var domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(React.createElement(LikeButton, null), domContainer);
+var root = ReactDOM.createRoot(document.getElementById('tournaments'));
+root.render(React.createElement(TournamentsList, { tornaments: tornaments }));
