@@ -1,5 +1,15 @@
 'use strict';
 
+function TournamentLink(props) {
+  var iconClassName = 'icon ' + props.className;
+  return props.href ? React.createElement(
+    'a',
+    { className: 'tournament-button', href: props.href, target: '_blank' },
+    React.createElement('span', { className: iconClassName }),
+    props.label
+  ) : "";
+}
+
 function Tournament(props) {
   var tornament = props.tornament;
 
@@ -45,30 +55,11 @@ function Tournament(props) {
       React.createElement(
         'div',
         { className: 'tournament__buttons' },
-        React.createElement(
-          'a',
-          { className: 'tournament-button', href: tornament.links.video, target: '_blank' },
-          React.createElement('span', { className: 'icon icon-photo' }),
-          '\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430'
-        ),
-        React.createElement(
-          'a',
-          { className: 'tournament-button', href: tornament.links.table, target: '_blank' },
-          React.createElement('span', { className: 'icon icon-photo' }),
-          '\u0422\u0443\u0440\u043D\u0438\u0440\u043D\u0430\u044F \u0442\u0430\u0431\u043B\u0438\u0446\u0430'
-        ),
-        React.createElement(
-          'a',
-          { className: 'tournament-button', href: tornament.links.teams, target: '_blank' },
-          React.createElement('span', { className: 'icon icon-photo' }),
-          '\u041A\u043E\u043C\u0430\u043D\u0434\u0430'
-        ),
-        React.createElement(
-          'a',
-          { className: 'tournament-button', href: tornament.links.photo, target: '_blank' },
-          React.createElement('span', { className: 'icon icon-photo' }),
-          '\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C'
-        )
+        React.createElement(TournamentLink, { href: tornament.links.video, className: 'icon-photo', label: '\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430' }),
+        React.createElement(TournamentLink, { href: tornament.links.video2, className: 'icon-photo', label: '\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430 #2' }),
+        React.createElement(TournamentLink, { href: tornament.links.table, className: 'icon-table', label: '\u0422\u0443\u0440\u043D\u0438\u0440\u043D\u0430\u044F \u0442\u0430\u0431\u043B\u0438\u0446\u0430' }),
+        React.createElement(TournamentLink, { href: tornament.links.teams, className: 'icon-teams', label: '\u0423\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0438' }),
+        React.createElement(TournamentLink, { href: tornament.links.photo, className: 'icon-photo', label: '\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C' })
       )
     )
   );

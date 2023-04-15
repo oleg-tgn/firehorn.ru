@@ -120,7 +120,7 @@ body {
     }
 }
 
-.navbar-socials {
+.socials {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -335,7 +335,7 @@ body {
     background-image: url('../img/icons/icon-photo.png');
 }
 
-.icon-tournament {
+.icon-table {
     background-image: url('../img/icons/icon-tornament.png');
 }
 
@@ -345,4 +345,23 @@ body {
 
 .icon-teams {
     background-image: url('../img/icons/icon-teams.png');
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 26px;
+    padding-bottom: 100px;
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__socials {
+        margin: 0 auto;
+    }
 }

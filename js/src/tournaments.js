@@ -1,5 +1,10 @@
 'use strict';
 
+function TournamentLink(props) {
+  let iconClassName = 'icon ' + props.className;
+  return props.href ? <a className="tournament-button" href={props.href} target="_blank"><span className={iconClassName}></span>{props.label}</a> : "";
+}
+
 function Tournament(props) {
   const tornament = props.tornament;
 
@@ -21,11 +26,12 @@ function Tournament(props) {
             <span className="tournament__date">{tornament.date}</span>
             <span className="tournament__location">{tornament.address}</span>
           </div>
-          <div className="tournament__buttons">
-              <a className="tournament-button" href={tornament.links.video} target="_blank"><span className="icon icon-photo"></span>Запись турнира</a>
-              <a className="tournament-button" href={tornament.links.table} target="_blank"><span className="icon icon-photo"></span>Турнирная таблица</a>
-              <a className="tournament-button" href={tornament.links.teams} target="_blank"><span className="icon icon-photo"></span>Команда</a>
-              <a className="tournament-button" href={tornament.links.photo} target="_blank"><span className="icon icon-photo"></span>Фотоальбом</a>
+          <div className="tournament__buttons">           
+              <TournamentLink href={tornament.links.video} className="icon-photo" label="Запись турнира" />
+              <TournamentLink href={tornament.links.video2} className="icon-photo" label="Запись турнира #2" />             
+              <TournamentLink href={tornament.links.table} className="icon-table" label="Турнирная таблица" />
+              <TournamentLink href={tornament.links.teams} className="icon-teams" label="Участники" />              
+              <TournamentLink href={tornament.links.photo} className="icon-photo" label="Фотоальбом" />
           </div>   
       </div>
   </div>
