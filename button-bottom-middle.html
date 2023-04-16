@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Horn League</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar__container">
+            <div class="navbar__logo">
+                <img src="img/icons/logo.svg" alt="" class="navbar__logo-icon">
+            </div>
+            <div class="navbar__description"></div>
+            <a class="stopwar" href="https://antiwarcommittee.info/" target="_blank">
+                <span class="blue">Fire Horn League</span><br>
+                <span class="yellow">против войны #stopwar</span>
+            </a>
+            <ul class="socials">
+                <li class="socials__item">
+                    <a class="socials__link" href="https://vk.com/firehorn" target="_blank"><img height="14" class="socials__icon" src="img/icons/vk.svg" alt=""></a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="https://www.youtube.com/@firehornleague679" target="_blank"><img height="14" class="socials__icon" src="img/icons/youtube.svg" alt=""></a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="https://www.instagram.com/firehornleague/" target="_blank"><img height="18" class="socials__icon" src="img/icons/instagram.svg" alt=""></a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="https://discord.com/invite/TaNjrHm" target="_blank"><img height="18" class="navbar-socials__icon" src="img/icons/discord.svg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+  <!-- Optional: some overlay text to describe the video -->
+  <div class="video-content">
+    <figure>
+        <video autoplay muted loop id="myVideo">
+            <source src="top_moments_short.mp4" type="video/mp4">
+        </video>
+        <figcaption class="video-content__controls">
+            <!-- <button id="play" aria-label="Play" role="button">►</button> -->
+            <progress class="video-content__progress" id="progress" max="100" value="0">Progress</progress>
+        </figcaption>
+    </figure>
+
+    <button class="video__button3 button" id="myBtn" onclick="playPause()">
+        <img class="video__button-icon" src="img/icons/pause-solid.svg" alt="pause" id="pause">
+        <img class="video__button-icon"src="img/icons/play-solid.svg" alt="play" id="play" style="display: none;">
+    </button>
+
+    <div class="video">
+        <div class="video__description">
+            <p class="video__description-text">                
+                Сообщество игроков League of Legends Таганрога и области.<br>      
+                3 года турниров, совместных просмотров чемпионатов
+                и просто душевных встреч.
+            </p>
+            <p class="video__description-text">
+                Присоединяйся!
+            </p>
+        </div>  
+    </div>
+  </div>
+
+  
+    <div class="tournaments">  
+        <!-- <a class="stopwar stopwar2" href="https://antiwarcommittee.info/" target="_blank">
+            <span class="blue">Fire Horn League</span>
+            <span class="yellow">против войны #stopwar</span>
+        </a> -->
+
+        <h1 class="title">Проведенные турниры</h1>
+
+        <div id="tournaments">
+            <!-- Tournaments List. -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__title">Присоединяйся к нам в соцсетях:</div>
+        <ul class="socials footer__socials">
+            <li class="socials__item">
+                <a class="socials__link" href="https://vk.com/firehorn" target="_blank"><img height="14" class="socials__icon" src="img/icons/vk_dark.svg" alt=""></a>
+            </li>
+            <li class="socials__item">
+                <a class="socials__link" href="https://www.youtube.com/@firehornleague679" target="_blank"><img height="14" class="socials__icon" src="img/icons/youtube_dark.svg" alt=""></a>
+            </li>
+            <li class="socials__item">
+                <a class="socials__link" href="https://www.instagram.com/firehornleague/" target="_blank"><img height="18" class="socials__icon" src="img/icons/instagram_dark.svg" alt=""></a>
+            </li>
+            <li class="socials__item">
+                <a class="socials__link" href="https://discord.com/invite/TaNjrHm" target="_blank"><img height="18" class="socials__icon" src="img/icons/discord_dark.svg" alt=""></a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+
+    <script src="js/tournaments-list.js"></script>
+    <script src="js/tournaments.js"></script>
+
+</body>
+</html>

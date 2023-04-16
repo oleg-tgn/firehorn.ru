@@ -209,6 +209,23 @@ body {
   background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
 }
+.video__button3 {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  z-index: 20;
+}
+.video__button3:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
 .video__button-icon {
   width: 25px;
   margin: auto;
