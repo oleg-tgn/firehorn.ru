@@ -69,7 +69,7 @@ function TournamentsList(props) {
   var tornaments = props.tornaments;
 
   return React.createElement(
-    'ul',
+    'div',
     null,
     tornaments.map(function (tornament) {
       return React.createElement(Tournament, { tornament: tornament, key: tornament.number.toString() });

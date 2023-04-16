@@ -42,11 +42,11 @@ function TournamentsList(props) {
   const tornaments = props.tornaments;
 
   return (
-    <ul>
+    <div>
       {tornaments.map((tornament) =>
         <Tournament tornament={tornament} key={tornament.number.toString()}/>
       )}
-    </ul>
+    </div>
   );
 }
 
