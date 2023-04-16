@@ -292,8 +292,10 @@ body {
         font-size: 18px;
         line-height: 140%;
 
-        @media (max-width: 767px) and (orientation: landscape) {
-            margin-top: 160px;
+        @media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+            margin-top: 180px;
+            font-size: 16px;
+            max-width: 600px;
         }
 
         @media (min-width: 992px) {
@@ -381,7 +383,7 @@ body {
     margin: 0 auto;
     max-width: 1250px;
     font-size: 20px;
-    margin: -30px auto 0;
+    margin: -30px 20px 0;
     z-index: 10;
     position: relative;
     background: #fff;
@@ -391,40 +393,27 @@ body {
     overflow: hidden;
 
     @media (max-width: 767px) {
-        max-width: 500px;
         align-items: center;
-    }
-
-    @media (min-width: 768px) {
-        padding: 20px;
-        max-width: 720px;
-    }
-
-    @media (min-width: 992px) {
-        max-width: 920px;
     }
 
     @media (min-width: 1200px) {
         max-width: 1250px;
         padding: 60px 40px;
+        margin: -30px auto 0;
     }
 }
 
 .tournament {
     margin: 0;
-    display: flex;    
+    display: flex;
 
-    @media (max-width: 767px) {
+    @media (max-width: 575px) {
         flex-direction: column;
         max-width: 360px;
         margin-bottom: 30px;
     }
 
-    @media (min-width: 768px) {
-        flex-direction: row;
-    }
-
-    @media (min-width: 768px) and (max-width: 992px) {
+    @media (min-width: 576px) and (max-width: 992px) {
         margin-bottom: 20px;
     }
 
@@ -438,7 +427,7 @@ body {
             }
         }
 
-        @media (min-width: 768px) and (max-width: 991px) {            
+        @media (min-width: 575px) and (max-width: 991px) {            
             &:not(:last-child) {
                 margin-right: 20px;
             }
@@ -462,9 +451,9 @@ body {
         background-size: cover;
         border-radius: 5px;
 
-        @media (min-width: 768px) {
+        @media (min-width: 576px) {
             width: 160px;
-            height: 100px;
+            height: 90px;
         }
 
         @media (min-width: 992px) {
@@ -510,8 +499,11 @@ body {
         line-height: 1.4;
         margin-bottom: 10px;
 
-        @media (min-width: 992px) {
+        @media (min-width: 768px) {
             flex-direction: row;
+        }
+
+        @media (min-width: 992px) {
             font-size: 14px;
         }
     }
@@ -524,7 +516,7 @@ body {
         display: flex;
         flex-direction: column;
 
-        @media (min-width: 768px) {
+        @media (min-width: 576px) {
             flex-direction: row;
             flex-wrap: wrap;
         }
@@ -537,8 +529,8 @@ body {
     align-items: center;
     
     box-sizing: border-box;
-    padding: 6px 8px;
     
+    padding: 10px;
     border: 1px solid #D2DBF5;
     border-radius: 6px;
 
@@ -552,18 +544,19 @@ body {
     background: transparent;
     transition: background 0.3s ease;
 
-    @media (max-width: 767px) {
+    @media (max-width: 575px) {
         &:not(:last-child) {
             margin-bottom: 10px;            
         }
     }
 
-    @media (min-width: 768px) and (max-width: 1199px) {
+    @media (min-width: 576px) and (max-width: 1199px) {
         margin-right: 15px;  
         margin-bottom: 10px;  
     }
 
     @media (min-width: 1200px) {
+        padding: 6px 8px;
         font-size: 16px;
         &:not(:last-child) {
             margin-right: 20px;
