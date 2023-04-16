@@ -27,8 +27,8 @@ function Tournament(props) {
             <span className="tournament__location">{tornament.address}</span>
           </div>
           <div className="tournament__buttons">           
-              <TournamentLink href={tornament.links.video} className="icon-photo" label="Запись турнира" />
-              <TournamentLink href={tornament.links.video2} className="icon-photo" label="Запись турнира #2" />             
+              <TournamentLink href={tornament.links.video} className="icon-video" label="Запись турнира" />
+              <TournamentLink href={tornament.links.video2} className="icon-video" label="Запись турнира #2" />             
               <TournamentLink href={tornament.links.table} className="icon-table" label="Турнирная таблица" />
               <TournamentLink href={tornament.links.teams} className="icon-teams" label="Участники" />              
               <TournamentLink href={tornament.links.photo} className="icon-photo" label="Фотоальбом" />
