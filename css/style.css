@@ -486,14 +486,14 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 13px 10px;
   border: 1px solid #D2DBF5;
   border-radius: 6px;
   font-family: "Visuelt Pro";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 1;
+  line-height: 16px;
   color: #2E4CA4;
   text-decoration: none;
   background: transparent;
