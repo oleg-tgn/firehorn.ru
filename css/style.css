@@ -1,18 +1,5 @@
-/* Style the video: 100% width and height to cover the entire window */
-@font-face {
-  font-family: "Visuelt Pro";
-  src: url("../fonts/VisueltPro-Regular.eot");
-  src: local("VisueltPro-Regular"), url("../fonts/VisueltPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/VisueltPro-Regular.woff2") format("woff2"), url("../fonts/VisueltPro-Regular.woff") format("woff"), url("../fonts/VisueltPro-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Visuelt Pro";
-  src: url("../fonts/VisueltPro-Bold.eot");
-  src: local("VisueltPro-Bold"), url("../fonts/VisueltPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/VisueltPro-Bold.woff2") format("woff2"), url("../fonts/VisueltPro-Bold.woff") format("woff"), url("../fonts/VisueltPro-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -20,8 +7,8 @@
 }
 
 body {
-  font-family: "Visuelt Pro";
-  font-weight: normal;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
   font-style: normal;
   background: #F4F4F7;
 }
@@ -172,49 +159,6 @@ body {
   color: rgb(255, 215, 0);
 }
 
-.stopwar2 {
-  right: 0;
-  top: 20px;
-  left: auto;
-  font-size: 16px;
-  color: #fff;
-}
-.stopwar2 .blue {
-  display: block;
-  padding: 5px;
-  background: rgb(0, 91, 171);
-}
-.stopwar2 .yellow {
-  display: block;
-  padding: 5px;
-  background: rgb(255, 215, 0);
-}
-
-.navbar3 {
-  height: 100px;
-}
-
-.stopwar3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: hsl(222, 14%, 10%);
-  height: 30px;
-}
-.stopwar3__link {
-  font-size: 12px;
-  color: #fff;
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-.stopwar3__link:hover .blue {
-  color: rgb(100, 150, 255);
-}
-.stopwar3__link:hover .yellow {
-  color: rgb(255, 215, 0);
-}
-
 .socials {
   display: flex;
   flex-direction: row;
@@ -253,7 +197,7 @@ body {
   max-width: 900px;
   margin: auto;
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 140%;
 }
@@ -489,8 +433,6 @@ body {
   padding: 13px 10px;
   border: 1px solid #D2DBF5;
   border-radius: 6px;
-  font-family: "Visuelt Pro";
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -513,7 +455,7 @@ body {
 @media (min-width: 1200px) {
   .tournament-button {
     padding: 6px 8px;
-    font-size: 16px;
+    font-size: 14px;
   }
   .tournament-button:not(:last-child) {
     margin-right: 20px;

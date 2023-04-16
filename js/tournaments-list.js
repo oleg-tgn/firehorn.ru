@@ -127,7 +127,7 @@ const tornaments = [
   {
     "number": "#2",
     "title": "Lan турнир Мармелад",
-    "image": "img/tournament-2.jpg",
+    "image": "img/tournament-2.png",
     "date": "30 октября 2019",
     "address": "Cyber Сlub, г. Таганрог, Петровская 29/2",
     "links": {
