@@ -23,6 +23,7 @@ body {
     margin-top: 0;
     min-height: 450px;
     overflow: hidden;
+    z-index: 10;
 
     @media (min-width: 768px) {
         height: calc(100vh - 70px);
@@ -231,7 +232,7 @@ body {
         margin-bottom: 30px;
 
         @media (min-width: 992px) {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
     }
 
@@ -302,14 +303,14 @@ body {
 
 .tournaments {
     position: relative;
+    z-index: 10;
+
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    max-width: 1250px;
-    font-size: 20px;
     margin: -30px 20px 0;
-    z-index: 10;
-    position: relative;
+    max-width: 1250px;
+    
+    font-size: 20px;
     background: #fff;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -486,6 +487,7 @@ body {
     }
 
     &:hover {
+        cursor: pointer;
         background: #D2DBF5;
     }
 
@@ -559,5 +561,142 @@ body {
 
     &__socials {
         margin: 0 auto;
+    }
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    animation-name: appear;
+    animation-duration: 300ms;
+
+    &__dialog {
+        width: auto;
+        max-width: 100%;
+        background: white;
+        position: relative;
+        margin: 0 20px;
+        max-height: calc(100vh - 60px);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: slide-in;
+        animation-duration: 0.5s;
+        font-size: 0;
+        border-radius: 10px;
+    }
+
+    &__header,
+    &__footer {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px 0;
+    }
+
+    &__header {
+        justify-content: space-between;
+        font-size: 16px;
+    }
+
+    &__footer {
+        border-top: 1px solid #dbdbdb;
+        justify-content: flex-end;
+    }
+
+    &__title {
+        font-size: 14px;
+        font-weight: 500;
+
+        @media (min-width: 1200px) {
+            font-size: 20px;
+        }
+    }
+
+    &__close {
+        cursor: pointer;
+        padding: 0 10px;
+        margin: -1rem -1rem -1rem auto;
+        font-size: 30px;
+
+        @media (min-width: 1200px) {
+            padding: 10px;
+        }
+    }
+
+    &__body {
+        overflow: auto;
+    }
+
+    &__content {
+        padding: 10px;
+    }
+}
+  
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+@keyframes slide-in {
+    from {
+        transform: translateY(-150px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}  
+  
+.youtube {
+    height: 200px;
+    max-height: calc(100vh - 100px);
+
+    @media (min-width: 576px) {
+        width: 450px;
+        height: 255px;
+        max-height: calc(100vh - 110px);
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+        width: 450px;
+        height: 280px;
+    }
+
+    @media (min-width: 768px) {
+        width: 650px;
+        height: 365px;
+    }    
+
+    @media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+        width: 530px;
+        height: 300px;
+    }
+
+    @media (min-width: 992px) {
+        width: 900px;
+        height: 500px;
+        max-height: calc(100vh - 160px);
+    }
+
+    @media (min-width: 1300px) {
+        width: 1200px;
+        height: 675px;
     }
 }

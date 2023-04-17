@@ -1,4 +1,4 @@
-const tornaments = [
+const tournaments = [
   {
     "number": "#13",
     "title": " Благотворительный онлайн-турнир №2",
@@ -6,7 +6,7 @@ const tornaments = [
     "date": "11 декабря 2022",
     "address": "Online",
     "links": {
-      "video": " https://www.youtube.com/watch?v=9r_uauOORA8",
+      "youtubeIframe": "https://www.youtube.com/embed/9r_uauOORA8",
       "table": " https://challonge.com/ru/fwvr19w9 ",
       "teams": " https://vk.com/firehorn?w=wall-186885826_1367",
     }
@@ -18,7 +18,7 @@ const tornaments = [
     "date": "27 августа 2022",
     "address": "Online",
     "links": {
-      "video": " https://www.youtube.com/watch?v=wN8gsn5TbLU ",
+      "youtubeIframe": "https://www.youtube.com/embed/wN8gsn5TbLU",
       "table": " https://challonge.com/ru/uod1gjgo ",
       "teams": " https://vk.com/firehorn?w=wall-186885826_1348 ",
     }
@@ -30,7 +30,7 @@ const tornaments = [
     "date": "10 апреля 2021",
     "address": "Кибер Арена VERSUS, г. Таганрог, Гоголевский 2-1",
     "links": {
-      "video": "https://www.youtube.com/watch?v=6f__wvoPTxU&t=4489s",
+      "youtubeIframe": "https://www.youtube.com/embed/6f__wvoPTxU",
       "teams": "https://vk.com/firehorn?w=wall-186885826_1284",
       "photo": "https://vk.com/album-186885826_280488151"
     }
@@ -107,8 +107,8 @@ const tornaments = [
       "date": "26 января 2020",
       "address": "Кибер-Арена, г. Ростов-на-Дону, Оренбургский пер., 2Б",
       "links": {
-          "video": "https://www.youtube.com/live/agXoBOBYsIk?feature=share",
-          "video2": "https://www.youtube.com/live/izmZb0AKYHM?feature=share",
+          "youtubeIframe": "https://www.youtube.com/embed/agXoBOBYsIk",
+          "youtubeIframe2": "https://www.youtube.com/embed/izmZb0AKYHM",
           "teams": "https://vk.com/firehorn?w=wall-186885826_249",            
           "photo": " https://vk.com/album-186885826_271637331"           
       }
@@ -131,7 +131,7 @@ const tornaments = [
     "date": "30 октября 2019",
     "address": "Cyber Сlub, г. Таганрог, Петровская 29/2",
     "links": {
-      "video": "https://www.youtube.com/live/1EfGagfDBRQ?feature=share",
+      "youtubeIframe": "https://www.youtube.com/embed/1EfGagfDBRQ",
       "table": "https://challonge.com/ru/rjvj5bhv",
       "teams": "https://vk.com/firehorn?w=wall-186885826_96",
       "photo": "https://vk.com/firehorn?z=album-186885826_270659157"
@@ -144,7 +144,7 @@ const tornaments = [
     "date": "5 октября 2019",
     "address": "Cyber Сlub, г. Таганрог, Петровская 29/2",
     "links": {
-      "video": "https://www.youtube.com/live/hgYET0rbMxo?feature=share&t=60",
+      "youtubeIframe": "https://www.youtube.com/embed/hgYET0rbMxo",
       "table": "https://challonge.com/ru/1wuf76fr",
       "teams": "https://vk.com/lol_tgn?w=wall-186904708_17%2Fall",
       "photo": "https://vk.com/album-186885826_268453002"

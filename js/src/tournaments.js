@@ -1,37 +1,44 @@
 'use strict';
 
+//import React, { useState } from 'react';
+
 function TournamentLink(props) {
   let iconClassName = 'icon ' + props.className;
   return props.href ? <a className="tournament-button" href={props.href} target="_blank"><span className={iconClassName}></span>{props.label}</a> : "";
 }
 
-function Tournament(props) {
-  const tornament = props.tornament;
+function TournamentModalLink(props) {
+  let iconClassName = 'icon ' + props.className;
+  return props.iframe ? <button className="tournament-button" onClick={() => props.openModal(true, props)}><span className={iconClassName}></span>{props.label}</button> : "";
+}
 
-  const imageStyle = {
-    backgroundImage: 'url(' + tornament.image + ')',
+function Tournament(props) {
+  const tournament = props.tournament;
+
+  const imageBackgroud = {
+    backgroundImage: 'url(' + tournament.image + ')',
   };
-  // Правильно! Не нужно определять здесь ключ:
-  return (    
+
+  return (
     <div className="tournament">
       <div className="tournament__column tournament__image-column">
-          <span className="tournament__image" style={imageStyle}></span>
+          <span className="tournament__image" style={imageBackgroud}></span>
       </div>
       <div className="tournament__column">
           <h3 className="tournament__title">
-            <span className="tournament__num">{tornament.number}</span>            
-            {tornament.title}
+            <span className="tournament__num">{tournament.number}</span>            
+            {tournament.title}
           </h3>
           <div className="tournament__desc">
-            <span className="tournament__date">{tornament.date}</span>
-            <span className="tournament__location">{tornament.address}</span>
+            <span className="tournament__date">{tournament.date}</span>
+            <span className="tournament__location">{tournament.address}</span>
           </div>
-          <div className="tournament__buttons">           
-              <TournamentLink href={tornament.links.video} className="icon-video" label="Запись турнира" />
-              <TournamentLink href={tornament.links.video2} className="icon-video" label="Запись турнира #2" />             
-              <TournamentLink href={tornament.links.table} className="icon-table" label="Турнирная таблица" />
-              <TournamentLink href={tornament.links.teams} className="icon-teams" label="Участники" />              
-              <TournamentLink href={tornament.links.photo} className="icon-photo" label="Фотоальбом" />
+          <div className="tournament__buttons">
+              <TournamentModalLink className="icon-video" label="Запись турнира" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe} openModal={props.openModal}/>
+              <TournamentModalLink className="icon-video" label="Запись турнира ч.2"  title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe2} openModal={props.openModal}/>             
+              <TournamentLink href={tournament.links.table} className="icon-table" label="Турнирная таблица" />
+              <TournamentLink href={tournament.links.teams} className="icon-teams" label="Участники" />              
+              <TournamentLink href={tournament.links.photo} className="icon-photo" label="Фотоальбом" />
           </div>   
       </div>
   </div>
@@ -39,16 +46,37 @@ function Tournament(props) {
 }
 
 function TournamentsList(props) {
-  const tornaments = props.tornaments;
+
+  const tournaments = props.tournaments;
+
+  const openModal = (isVisible, props = {}, type = "youtube") => {
+    setModal(isVisible);
+
+    document.body.style.overflow = isVisible ? 'hidden' : '';
+    console.log(isVisible);
+    document.getElementsByClassName("tournaments")[0].style.zIndex = isVisible ? 200 : 10;
+    modal.title = props.title;
+    modal.iframe = YouTubeFrame(props.iframe);
+  } 
+
+  const [isModal, setModal] = React.useState(false);
+  const [modal] = React.useState({});
 
   return (
     <div>
-      {tornaments.map((tornament) =>
-        <Tournament tornament={tornament} key={tornament.number.toString()}/>
+      <Modal
+        isVisible={isModal}
+        title={modal.title}
+        content={modal.iframe}
+        onClose={() => openModal(false)}
+      />
+
+      {tournaments.map((tournament) =>
+        <Tournament tournament={tournament} key={tournament.number.toString()} openModal={openModal} />
       )}
     </div>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('tournaments'));
-root.render(<TournamentsList tornaments={tornaments} />);
+const root = ReactDOM.createRoot(document.getElementById('tournaments-list'));
+root.render(<TournamentsList tournaments={tournaments} />);

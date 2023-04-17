@@ -20,6 +20,7 @@ body {
   margin-top: 0;
   min-height: 450px;
   overflow: hidden;
+  z-index: 10;
   /* WebKit styles */
   /* Firefox styles */
 }
@@ -218,7 +219,7 @@ body {
 }
 @media (min-width: 992px) {
   .video__description-text {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 }
 .video__button {
@@ -281,14 +282,12 @@ body {
 
 .tournaments {
   position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: -30px 20px 0;
   max-width: 1250px;
   font-size: 20px;
-  margin: -30px 20px 0;
-  z-index: 10;
-  position: relative;
   background: #fff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -462,6 +461,7 @@ body {
   }
 }
 .tournament-button:hover {
+  cursor: pointer;
   background: #D2DBF5;
 }
 .tournament-button__icon {
@@ -535,6 +535,139 @@ body {
 }
 .footer__socials {
   margin: 0 auto;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  animation-name: appear;
+  animation-duration: 300ms;
+}
+.modal__dialog {
+  width: auto;
+  max-width: 100%;
+  background: white;
+  position: relative;
+  margin: 0 20px;
+  max-height: calc(100vh - 60px);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+  font-size: 0;
+  border-radius: 10px;
+}
+.modal__header, .modal__footer {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 0;
+}
+.modal__header {
+  justify-content: space-between;
+  font-size: 16px;
+}
+.modal__footer {
+  border-top: 1px solid #dbdbdb;
+  justify-content: flex-end;
+}
+.modal__title {
+  font-size: 14px;
+  font-weight: 500;
+}
+@media (min-width: 1200px) {
+  .modal__title {
+    font-size: 20px;
+  }
+}
+.modal__close {
+  cursor: pointer;
+  padding: 0 10px;
+  margin: -1rem -1rem -1rem auto;
+  font-size: 30px;
+}
+@media (min-width: 1200px) {
+  .modal__close {
+    padding: 10px;
+  }
+}
+.modal__body {
+  overflow: auto;
+}
+.modal__content {
+  padding: 10px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-150px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.youtube {
+  height: 200px;
+  max-height: calc(100vh - 100px);
+}
+@media (min-width: 576px) {
+  .youtube {
+    width: 450px;
+    height: 255px;
+    max-height: calc(100vh - 110px);
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+  .youtube {
+    width: 450px;
+    height: 280px;
+  }
+}
+@media (min-width: 768px) {
+  .youtube {
+    width: 650px;
+    height: 365px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+  .youtube {
+    width: 530px;
+    height: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .youtube {
+    width: 900px;
+    height: 500px;
+    max-height: calc(100vh - 160px);
+  }
+}
+@media (min-width: 1300px) {
+  .youtube {
+    width: 1200px;
+    height: 675px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
