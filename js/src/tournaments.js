@@ -53,8 +53,7 @@ function TournamentsList(props) {
     setModal(isVisible);
 
     document.body.style.overflow = isVisible ? 'hidden' : '';
-    console.log(isVisible);
-    document.getElementsByClassName("tournaments")[0].style.zIndex = isVisible ? 200 : 10;
+    
     modal.title = props.title;
     modal.iframe = YouTubeFrame(props.iframe);
   } 

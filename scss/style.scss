@@ -586,7 +586,7 @@ body {
         background: white;
         position: relative;
         margin: 0 20px;
-        max-height: calc(100vh - 60px);
+        max-height: calc(100vh - 160px);
         text-align: left;
         display: flex;
         flex-direction: column;
@@ -666,12 +666,12 @@ body {
   
 .youtube {
     height: 200px;
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 200px);
 
     @media (min-width: 576px) {
         width: 450px;
         height: 255px;
-        max-height: calc(100vh - 110px);
+        max-height: calc(100vh - 210px);
     }
 
     @media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
@@ -692,7 +692,7 @@ body {
     @media (min-width: 992px) {
         width: 900px;
         height: 500px;
-        max-height: calc(100vh - 160px);
+        max-height: calc(100vh - 260px);
     }
 
     @media (min-width: 1300px) {
