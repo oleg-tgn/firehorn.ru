@@ -33,6 +33,8 @@ const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
 
 const YouTubeFrame = (link) => {
     return (
-        <iframe width="100%" height="100%" className="youtube" src={link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      <div className="youtube">
+        <iframe width="100%" height="100%" className="youtube__iframe" src={link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      </div>
     )
 }
