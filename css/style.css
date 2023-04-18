@@ -21,6 +21,9 @@ body {
   min-height: 450px;
   overflow: hidden;
   z-index: 10;
+  max-width: 1980px;
+  max-height: 1080px;
+  margin: 0 auto;
   /* WebKit styles */
   /* Firefox styles */
 }
@@ -118,6 +121,11 @@ body {
   .navbar__logo {
     margin: 0;
     max-width: 140px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar__logo {
+    margin: 0;
   }
 }
 .navbar__logo-icon {
