@@ -38,3 +38,9 @@ const YouTubeFrame = (link) => {
       </div>
     )
 }
+
+const ChallongeFrame = (link) => {
+  <div className="youtube">
+    <iframe width="100%" height="100%" className="youtube__iframe" src={link} frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+  </div>
+}

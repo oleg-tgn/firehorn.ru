@@ -71,3 +71,11 @@ var YouTubeFrame = function YouTubeFrame(link) {
     React.createElement('iframe', { width: '100%', height: '100%', className: 'youtube__iframe', src: link, title: 'YouTube video player', frameBorder: '0', allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share', allowFullScreen: true })
   );
 };
+
+var ChallongeFrame = function ChallongeFrame(link) {
+  React.createElement(
+    'div',
+    { className: 'youtube' },
+    React.createElement('iframe', { width: '100%', height: '100%', className: 'youtube__iframe', src: link, frameborder: '0', scrolling: 'auto', allowtransparency: 'true' })
+  );
+};

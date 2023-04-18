@@ -8,6 +8,7 @@ const tournaments = [
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/9r_uauOORA8",
       "table": " https://challonge.com/ru/fwvr19w9 ",
+      "tableIframe": "https://challonge.com/ru/fwvr19w9/module",
       "teams": " https://vk.com/firehorn?w=wall-186885826_1367",
     }
   },
@@ -20,6 +21,7 @@ const tournaments = [
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/wN8gsn5TbLU",
       "table": " https://challonge.com/ru/uod1gjgo ",
+      "tableIframe": "https://challonge.com/ru/uod1gjgo/module",
       "teams": " https://vk.com/firehorn?w=wall-186885826_1348 ",
     }
   },
@@ -43,6 +45,7 @@ const tournaments = [
     "address": "Cyber Arena, Ростов-на-Дону, ул. Жданова 2/7, ТЦ \"Левенцовский\"",
     "links": {
       "table": "https://docs.google.com/spreadsheets/d/162KLZZYS-rXmkzHKCWIPajDDPaTrmg3pEH3BwYLxXAM/edit?usp=sharing",
+      "tableIframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSczulGidFIlg57Tq3_mY872Vqxtn9m6JIx4Homdp1Imr9R9OJb4K8_wOoOkAXm2H9kAcUAlYd5uaQq/pubhtml?gid=2049245090&amp;single=true&amp;widget=true&amp;headers=false",
       "teams": "https://vk.com/firehorn?w=wall-186885826_1164",
       "photo": "https://vk.com/album-186885826_277924269"
     }
@@ -75,7 +78,7 @@ const tournaments = [
     "date": "4 июля 2020",
     "address": "Online",
     "links": {
-      "table": "https://fire-horn.ru/online/3/",
+      // "table": "https://fire-horn.ru/online/3/",
       "teams": "https://vk.com/firehorn?w=wall-186885826_867",
     }
   },
@@ -86,7 +89,8 @@ const tournaments = [
     "date": "26 апреля 2020",
     "address": "Online",
     "links": {
-      "table": " https://fire-horn.ru/online/2/index.php ",
+      // "table": " https://fire-horn.ru/online/2/index.php ",
+      // "tableIframe": "https://challonge.com/ru/rjvj5bhv/module",
     }
   },
   {
@@ -133,6 +137,7 @@ const tournaments = [
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/1EfGagfDBRQ",
       "table": "https://challonge.com/ru/rjvj5bhv",
+      "tableIframe": "https://challonge.com/ru/rjvj5bhv/module",
       "teams": "https://vk.com/firehorn?w=wall-186885826_96",
       "photo": "https://vk.com/firehorn?z=album-186885826_270659157"
     }
@@ -146,6 +151,7 @@ const tournaments = [
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/hgYET0rbMxo",
       "table": "https://challonge.com/ru/1wuf76fr",
+      "tableIframe": "https://challonge.com/ru/1wuf76fr/module",
       "teams": "https://vk.com/lol_tgn?w=wall-186904708_17%2Fall",
       "photo": "https://vk.com/album-186885826_268453002"
     }

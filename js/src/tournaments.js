@@ -34,9 +34,9 @@ function Tournament(props) {
             <span className="tournament__location">{tournament.address}</span>
           </div>
           <div className="tournament__buttons">
-              <TournamentModalLink className="icon-video" label="Запись турнира" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe} openModal={props.openModal}/>
-              <TournamentModalLink className="icon-video" label="Запись турнира ч.2"  title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe2} openModal={props.openModal}/>             
-              <TournamentLink href={tournament.links.table} className="icon-table" label="Турнирная таблица" />
+              <TournamentModalLink className="icon-video" label="Запись турнира" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe} openModal={props.openModal} type="youtube"/>
+              <TournamentModalLink className="icon-video" label="Запись турнира ч.2" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe2} openModal={props.openModal} type="youtube"/>             
+              <TournamentModalLink className="icon-table" label="Турнирная таблица" title={tournament.number + " " +tournament.title} iframe={tournament.links.tableIframe} openModal={props.openModal} type="challonge" />
               <TournamentLink href={tournament.links.teams} className="icon-teams" label="Участники" />              
               <TournamentLink href={tournament.links.photo} className="icon-photo" label="Фотоальбом" />
           </div>   
@@ -55,7 +55,10 @@ function TournamentsList(props) {
     document.body.style.overflow = isVisible ? 'hidden' : '';
     
     modal.title = props.title;
-    modal.iframe = YouTubeFrame(props.iframe);
+    switch (type) {
+      case "youtube": modal.iframe = YouTubeFrame(props.iframe); break;
+      case "challonge": modal.iframe = ChallongeFrame(props.iframe); break;
+    }
   } 
 
   const [isModal, setModal] = React.useState(false);
