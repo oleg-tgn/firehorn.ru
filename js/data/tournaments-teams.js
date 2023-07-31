@@ -1,4 +1,39 @@
 const tournamentsTeams = {
+  14: {
+    teams: [
+       {
+         name: "Vole",
+         participants: [
+          `Алексей "Director x" Акользин`,
+          `Александр "Sanya31520" Бойко`,
+          `Stitch "Трошки" Koran:`,
+          `Олег "UR0B0R0S" Верхотуров`,
+          `Виолетта "Dateria" Чернецкая`,
+         ]
+       },
+       {
+         name: "МИНИ БАР",
+         participants: [
+          `Герман "BeTteRy" Голиков`,
+          `Глеб "Ягермастер Йи" Кияница`,
+          `Даниил "Джек Даниилс" Овсянников`,
+          `Кирилл "Пиварус Крепкое" Профатилов`,
+          `Александра "Uweullar" Князева`,
+         ]
+       },
+       {
+         name: "Sfedu reborn uwu",
+         participants: [
+          `Тигран "manonoх" Мамедов`,
+          `Вячеслав "RayRaven" Пак`,
+          `Никита "Grabnic" Грабовский`,
+          `Алексей "TabeTaylb" Краснов`,
+          `Майро "MayroFromDonbass" Лопес`,
+          `Артём "Nike6" Компанийцев`,
+         ]
+       },
+    ]
+  },
   12: {
      teams: [
         {

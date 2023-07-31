@@ -1,19 +1,19 @@
 const tournaments = [
   {
     "number": "#14",
-    "title": " Благотворительный онлайн-турнир №2",
-    "image": "img/tournament-13.jpg",
-    "date": "11 декабря 2022",
+    "title": "Товарищеский турнир",
+    "image": "img/tournament-14.jpg",
+    "date": "23 апрель 2023",
     "address": "Online",
     "links": {
-      "youtubeIframe": "https://www.youtube.com/embed/9r_uauOORA8",
-      "tableIframe": "https://challonge.com/ru/fwvr19w9/module",
-      "teams": "",
+      "youtubeIframe": "https://www.youtube.com/embed/NJzK1aq-_Hg",
+      "tableIframe": "https://challonge.com/ru/6sju0n70/module",
+      "teams": tournamentsTeams[14],
     },
   },
   {
     "number": "#13",
-    "title": " Благотворительный онлайн-турнир №2",
+    "title": "Благотворительный онлайн-турнир №2",
     "image": "img/tournament-13.jpg",
     "date": "11 декабря 2022",
     "address": "Online",
@@ -25,7 +25,7 @@ const tournaments = [
   },
   {
     "number": "#12",
-    "title": " Благотворительный онлайн-турнир №1",
+    "title": "Благотворительный онлайн-турнир №1",
     "image": "img/tournament-12.jpg",
     "date": "27 августа 2022",
     "address": "Online",
@@ -43,6 +43,7 @@ const tournaments = [
     "address": "Кибер Арена VERSUS, г. Таганрог, Гоголевский 2-1",
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/6f__wvoPTxU",
+      "tableIframe": "https://challonge.com/ru/akg47co5/module",
       "teams": tournamentsTeams[11],
       //"photo": "https://vk.com/album-186885826_280488151"
     }
