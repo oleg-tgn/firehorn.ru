@@ -425,13 +425,22 @@ body {
     flex-wrap: wrap;
   }
 }
+.tournament__youtube_buttons {
+  display: flex;
+  flex-direction: column;
+}
+.tournament__youtube_buttons .tournament-button:first-child {
+  margin-right: 20px;
+}
 
 .tournament-button {
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  height: 30px;
   padding: 13px 10px;
+  margin-bottom: 10px;
   border: 1px solid #D2DBF5;
   border-radius: 6px;
   font-weight: 500;
@@ -455,7 +464,7 @@ body {
 }
 @media (min-width: 1200px) {
   .tournament-button {
-    padding: 6px 8px;
+    padding: 5px 8px;
     font-size: 14px;
   }
   .tournament-button:not(:last-child) {
@@ -466,9 +475,19 @@ body {
   cursor: pointer;
   background: #D2DBF5;
 }
+.tournament-button:disabled, .tournament-button[disabled] {
+  cursor: default;
+  border-color: #8487A0;
+  color: #8487A0;
+  background: none;
+  opacity: 0.7;
+}
 .tournament-button__icon {
   width: 15px;
   height: 15px;
+}
+.tournament-button i {
+  margin-right: 5px;
 }
 
 .title {
@@ -539,6 +558,22 @@ body {
   margin: 0 auto;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-150px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 .modal {
   position: fixed;
   top: 0;
@@ -550,14 +585,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.8);
   animation-name: appear;
   animation-duration: 300ms;
+  cursor: pointer;
 }
 .modal__dialog {
   width: auto;
   max-width: 100%;
-  background: white;
   position: relative;
   margin: 0 20px;
   max-height: 100vh;
@@ -565,7 +600,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: slide-in;
@@ -577,6 +611,8 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px 0;
+  color: #fff;
+  cursor: default;
 }
 .modal__header {
   justify-content: space-between;
@@ -607,13 +643,17 @@ body {
 }
 .modal__close {
   cursor: pointer;
-  padding: 0 10px;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
   margin: -1rem -1rem -1rem auto;
-  font-size: 30px;
+  font-size: 40px;
+  line-height: 1;
+  text-align: center;
 }
 @media (min-width: 1200px) {
   .modal__close {
-    padding: 10px;
+    padding: 0;
   }
 }
 .modal__body {
@@ -628,22 +668,6 @@ body {
   }
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes slide-in {
-  from {
-    transform: translateY(-150px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 .youtube {
   position: relative;
   overflow: hidden;
@@ -676,6 +700,12 @@ body {
     width: calc(100vw - 50px);
     height: auto;
     max-height: calc(100vh - 240px);
+  }
+}
+@media (min-width: 1400px) and (orientation: landscape) {
+  .youtube {
+    width: 1200px;
+    height: auto;
   }
 }
 .youtube__iframe {

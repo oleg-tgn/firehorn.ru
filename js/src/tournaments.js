@@ -3,13 +3,17 @@
 //import React, { useState } from 'react';
 
 function TournamentLink(props) {
-  let iconClassName = 'icon ' + props.className;
-  return props.href ? <a className="tournament-button" href={props.href} target="_blank"><span className={iconClassName}></span>{props.label}</a> : "";
+  let buttonClass = "tournament-button"
+  if (!props.href)
+    buttonClass += " disable";
+  return <a className="tournament-button" href={props.href} target="_blank" disabled={!props.href}><i class={props.iconClassName}></i>{props.label}</a>;
 }
 
 function TournamentModalLink(props) {
-  let iconClassName = 'icon ' + props.className;
-  return props.iframe ? <button className="tournament-button" onClick={() => props.openModal(true, props)}><span className={iconClassName}></span>{props.label}</button> : "";
+  let buttonClass = "tournament-button"
+  if (!props.iframe)
+    buttonClass += " disable";
+  return <button className={buttonClass} onClick={() => props.openModal(true, props)} disabled={!props.iframe}><i class={props.iconClassName}></i>{props.label}</button>;
 }
 
 function Tournament(props) {
@@ -26,7 +30,7 @@ function Tournament(props) {
       </div>
       <div className="tournament__column">
           <h3 className="tournament__title">
-            <span className="tournament__num">{tournament.number}</span>            
+            <span className="tournament__num">{tournament.number}</span>
             {tournament.title}
           </h3>
           <div className="tournament__desc">
@@ -34,12 +38,14 @@ function Tournament(props) {
             <span className="tournament__location">{tournament.address}</span>
           </div>
           <div className="tournament__buttons">
-              <TournamentModalLink className="icon-video" label="Запись турнира" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe} openModal={props.openModal} type="youtube"/>
-              <TournamentModalLink className="icon-video" label="Запись турнира ч.2" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe2} openModal={props.openModal} type="youtube"/>             
-              <TournamentModalLink className="icon-table" label="Турнирная таблица" title={tournament.number + " " +tournament.title} iframe={tournament.links.tableIframe} openModal={props.openModal} type="challonge" />
-              <TournamentLink href={tournament.links.teams} className="icon-teams" label="Участники" />              
-              <TournamentLink href={tournament.links.photo} className="icon-photo" label="Фотоальбом" />
-          </div>   
+              <div className="tournament__youtube_buttons">
+                <TournamentModalLink iconClassName="fa-regular fa-circle-play" label="Запись турнира" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe} openModal={props.openModal} type="youtube"/> 
+                {tournament.links.youtubeIframe2 && <TournamentModalLink iconClassName="fa-regular fa-circle-play" label="Запись турнира ч.2" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe2} openModal={props.openModal} type="youtube"/>}
+              </div>
+              <TournamentModalLink iconClassName="fa-solid fa-diagram-project" label="Турнирная таблица" title={tournament.number + " " +tournament.title} iframe={tournament.links.tableIframe} openModal={props.openModal} type="challonge" />
+              <TournamentLink href={tournament.links.teams} iconClassName="fa-solid fa-people-group" label="Участники" />
+              <TournamentLink href={tournament.links.photo} iconClassName="fa-regular fa-image" label="Фотоальбом" />
+          </div>
       </div>
   </div>
   );

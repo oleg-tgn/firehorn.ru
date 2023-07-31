@@ -5,25 +5,27 @@
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 function TournamentLink(props) {
-  var iconClassName = 'icon ' + props.className;
-  return props.href ? React.createElement(
-    'a',
-    { className: 'tournament-button', href: props.href, target: '_blank' },
-    React.createElement('span', { className: iconClassName }),
+  var buttonClass = "tournament-button";
+  if (!props.href) buttonClass += " disable";
+  return React.createElement(
+    "a",
+    { className: "tournament-button", href: props.href, target: "_blank", disabled: !props.href },
+    React.createElement("i", { "class": props.iconClassName }),
     props.label
-  ) : "";
+  );
 }
 
 function TournamentModalLink(props) {
-  var iconClassName = 'icon ' + props.className;
-  return props.iframe ? React.createElement(
-    'button',
-    { className: 'tournament-button', onClick: function onClick() {
+  var buttonClass = "tournament-button";
+  if (!props.iframe) buttonClass += " disable";
+  return React.createElement(
+    "button",
+    { className: buttonClass, onClick: function onClick() {
         return props.openModal(true, props);
-      } },
-    React.createElement('span', { className: iconClassName }),
+      }, disabled: !props.iframe },
+    React.createElement("i", { "class": props.iconClassName }),
     props.label
-  ) : "";
+  );
 }
 
 function Tournament(props) {
@@ -34,48 +36,52 @@ function Tournament(props) {
   };
 
   return React.createElement(
-    'div',
-    { className: 'tournament' },
+    "div",
+    { className: "tournament" },
     React.createElement(
-      'div',
-      { className: 'tournament__column tournament__image-column' },
-      React.createElement('span', { className: 'tournament__image', style: imageBackgroud })
+      "div",
+      { className: "tournament__column tournament__image-column" },
+      React.createElement("span", { className: "tournament__image", style: imageBackgroud })
     ),
     React.createElement(
-      'div',
-      { className: 'tournament__column' },
+      "div",
+      { className: "tournament__column" },
       React.createElement(
-        'h3',
-        { className: 'tournament__title' },
+        "h3",
+        { className: "tournament__title" },
         React.createElement(
-          'span',
-          { className: 'tournament__num' },
+          "span",
+          { className: "tournament__num" },
           tournament.number
         ),
         tournament.title
       ),
       React.createElement(
-        'div',
-        { className: 'tournament__desc' },
+        "div",
+        { className: "tournament__desc" },
         React.createElement(
-          'span',
-          { className: 'tournament__date' },
+          "span",
+          { className: "tournament__date" },
           tournament.date
         ),
         React.createElement(
-          'span',
-          { className: 'tournament__location' },
+          "span",
+          { className: "tournament__location" },
           tournament.address
         )
       ),
       React.createElement(
-        'div',
-        { className: 'tournament__buttons' },
-        React.createElement(TournamentModalLink, { className: 'icon-video', label: '\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430', title: tournament.number + " " + tournament.title, iframe: tournament.links.youtubeIframe, openModal: props.openModal, type: 'youtube' }),
-        React.createElement(TournamentModalLink, { className: 'icon-video', label: '\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430 \u0447.2', title: tournament.number + " " + tournament.title, iframe: tournament.links.youtubeIframe2, openModal: props.openModal, type: 'youtube' }),
-        React.createElement(TournamentModalLink, { className: 'icon-table', label: '\u0422\u0443\u0440\u043D\u0438\u0440\u043D\u0430\u044F \u0442\u0430\u0431\u043B\u0438\u0446\u0430', title: tournament.number + " " + tournament.title, iframe: tournament.links.tableIframe, openModal: props.openModal, type: 'challonge' }),
-        React.createElement(TournamentLink, { href: tournament.links.teams, className: 'icon-teams', label: '\u0423\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0438' }),
-        React.createElement(TournamentLink, { href: tournament.links.photo, className: 'icon-photo', label: '\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C' })
+        "div",
+        { className: "tournament__buttons" },
+        React.createElement(
+          "div",
+          { className: "tournament__youtube_buttons" },
+          React.createElement(TournamentModalLink, { iconClassName: "fa-regular fa-circle-play", label: "\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430", title: tournament.number + " " + tournament.title, iframe: tournament.links.youtubeIframe, openModal: props.openModal, type: "youtube" }),
+          tournament.links.youtubeIframe2 && React.createElement(TournamentModalLink, { iconClassName: "fa-regular fa-circle-play", label: "\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430 \u0447.2", title: tournament.number + " " + tournament.title, iframe: tournament.links.youtubeIframe2, openModal: props.openModal, type: "youtube" })
+        ),
+        React.createElement(TournamentModalLink, { iconClassName: "fa-solid fa-diagram-project", label: "\u0422\u0443\u0440\u043D\u0438\u0440\u043D\u0430\u044F \u0442\u0430\u0431\u043B\u0438\u0446\u0430", title: tournament.number + " " + tournament.title, iframe: tournament.links.tableIframe, openModal: props.openModal, type: "challonge" }),
+        React.createElement(TournamentLink, { href: tournament.links.teams, iconClassName: "fa-solid fa-people-group", label: "\u0423\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0438" }),
+        React.createElement(TournamentLink, { href: tournament.links.photo, iconClassName: "fa-regular fa-image", label: "\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C" })
       )
     )
   );
@@ -112,7 +118,7 @@ function TournamentsList(props) {
       modal = _React$useState4[0];
 
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(Modal, {
       isVisible: isModal,
