@@ -20,7 +20,7 @@ const tournaments = [
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/9r_uauOORA8",
       "tableIframe": "https://challonge.com/ru/fwvr19w9/module",
-      "teams": "",
+      "teams": tournamentsTeams[13],
     },
   },
   {
