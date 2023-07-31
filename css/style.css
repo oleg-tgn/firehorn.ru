@@ -557,6 +557,21 @@ body {
 .footer__socials {
   margin: 0 auto;
 }
+.footer .socials__link {
+  font-size: 20px;
+  text-decoration: none;
+}
+.footer .socials__link i:before {
+  color: #4D4F60;
+}
+.footer .socials__link:hover {
+  opacity: 0.8;
+}
+
+.icon-vk,
+.icon-youtube {
+  font-size: 17px;
+}
 
 @keyframes appear {
   from {
@@ -668,52 +683,125 @@ body {
   }
 }
 
-.youtube {
+.frame {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16/9;
   margin: auto;
 }
 @media (orientation: landscape) {
-  .youtube {
+  .frame {
     width: auto;
     max-width: calc(100vw - 100px);
     height: calc(100vh - 240px);
   }
 }
 @media (max-height: 420px) and (orientation: landscape) {
-  .youtube {
+  .frame {
     width: auto;
     max-width: calc(100vw - 100px);
     height: calc(100vh - 100px);
   }
 }
 @media (orientation: portrait) {
-  .youtube {
+  .frame {
     width: calc(100vw - 100px);
     height: auto;
     max-height: calc(100vh - 240px);
   }
 }
 @media (max-width: 576px) and (orientation: portrait) {
-  .youtube {
+  .frame {
     width: calc(100vw - 50px);
     height: auto;
     max-height: calc(100vh - 240px);
   }
 }
-@media (min-width: 1400px) and (orientation: landscape) {
-  .youtube {
-    width: 1200px;
+@media (min-width: 1400px) and (min-height: 800px) and (orientation: landscape) {
+  .frame {
+    width: 1000px;
     height: auto;
   }
 }
-.youtube__iframe {
+@media (min-width: 1200px) {
+  .frame.challonge {
+    width: 730px;
+    height: auto;
+  }
+}
+.frame__iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.teams {
+  width: 700px;
+  overflow-y: auto;
+  padding: 10px 20px 20px;
+  font-size: 14px;
+  background: #fff;
+  aspect-ratio: 16/9;
+  cursor: default;
+}
+.teams__title {
+  font-size: 16px;
+  color: #444655;
+}
+
+.teams-list {
+  margin-top: 10px;
+  list-style-type: none;
+  line-height: 1.5;
+}
+.teams-list__team-name {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?99t5wo");
+  src: url("../fonts/icomoon.eot?99t5wo#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?99t5wo") format("truetype"), url("../fonts/icomoon.woff?99t5wo") format("woff"), url("../fonts/icomoon.svg?99t5wo#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-discord:before {
+  content: "\e900";
+  color: #fff;
+}
+
+.icon-instagram:before {
+  content: "\e901";
+  color: #fff;
+}
+
+.icon-vk:before {
+  content: "\e902";
+  color: #fff;
+}
+
+.icon-youtube:before {
+  content: "\e903";
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

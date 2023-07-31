@@ -67,15 +67,85 @@ var Modal = function Modal(_ref) {
 var YouTubeFrame = function YouTubeFrame(link) {
   return React.createElement(
     'div',
-    { className: 'youtube' },
-    React.createElement('iframe', { width: '100%', height: '100%', className: 'youtube__iframe', src: link, title: 'YouTube video player', frameBorder: '0', allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share', allowFullScreen: true })
+    { className: 'frame youtube' },
+    React.createElement('iframe', { width: '100%', height: '100%', className: 'frame__iframe', src: link, title: 'YouTube video player', frameBorder: '0', allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share', allowFullScreen: true })
   );
 };
 
-var ChallongeFrame = function ChallongeFrame(link) {
-  React.createElement(
+var PhotoFrame = function PhotoFrame(link) {
+  return React.createElement(
     'div',
-    { className: 'youtube' },
-    React.createElement('iframe', { width: '100%', height: '100%', className: 'youtube__iframe', src: link, frameborder: '0', scrolling: 'auto', allowtransparency: 'true' })
+    { className: 'frame photo' },
+    React.createElement('iframe', { width: '100%', height: '100%', className: 'frame__iframe', src: link, frameBorder: '0', scrolling: 'auto', allowtransparency: 'true' })
+  );
+};
+
+var TableFrame = function TableFrame(link) {
+  var linkType = "";
+  if (link.includes('challonge.com')) linkType = "challonge";else if (link.includes('docs.google.com')) linkType = "docs";
+
+  var wrapClass = "frame " + linkType;
+  return React.createElement(
+    'div',
+    { className: wrapClass },
+    React.createElement('iframe', { width: '100%', height: '100%', className: 'frame__iframe', src: link, frameBorder: '0', scrolling: 'auto', allowtransparency: 'true' })
+  );
+};
+
+var TeamsFrame = function TeamsFrame(teams) {
+  var listWinners = teams.winners && teams.winners.map(function (person) {
+    return React.createElement(
+      'li',
+      { className: 'teams-list__item', key: person.toString() },
+      person
+    );
+  });
+
+  var teamsList = teams.teams && teams.teams.map(function (team) {
+    return React.createElement(
+      'li',
+      { className: 'teams-list__item', key: team.name.toString() },
+      React.createElement(
+        'strong',
+        { className: 'teams-list__team-name' },
+        team.name
+      ),
+      React.createElement(
+        'ul',
+        { className: 'teams-list' },
+        team.participants.map(function (person) {
+          return React.createElement(
+            'li',
+            { className: 'teams-list__item', key: person.toString() },
+            person
+          );
+        })
+      )
+    );
+  });
+
+  return React.createElement(
+    'div',
+    { className: 'teams' },
+    teams.winners && React.createElement(
+      'h2',
+      { className: 'teams__title' },
+      '\u041F\u043E\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u0438:'
+    ),
+    React.createElement(
+      'ul',
+      { className: 'teams-list' },
+      listWinners
+    ),
+    teams.teams && React.createElement(
+      'h2',
+      { className: 'teams__title' },
+      '\u0423\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0438:'
+    ),
+    React.createElement(
+      'ul',
+      { className: 'teams-list' },
+      teamsList
+    )
   );
 };

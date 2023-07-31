@@ -6,14 +6,14 @@ function TournamentLink(props) {
   let buttonClass = "tournament-button"
   if (!props.href)
     buttonClass += " disable";
-  return <a className="tournament-button" href={props.href} target="_blank" disabled={!props.href}><i class={props.iconClassName}></i>{props.label}</a>;
+  return <a className="tournament-button" href={props.href} target="_blank" disabled={!props.href}><i className={props.iconClassName}></i>{props.label}</a>;
 }
 
 function TournamentModalLink(props) {
   let buttonClass = "tournament-button"
-  if (!props.iframe)
+  if (!props.content)
     buttonClass += " disable";
-  return <button className={buttonClass} onClick={() => props.openModal(true, props)} disabled={!props.iframe}><i class={props.iconClassName}></i>{props.label}</button>;
+  return <button className={buttonClass} onClick={() => props.openModal(true, props)} disabled={!props.content}><i className={props.iconClassName}></i>{props.label}</button>;
 }
 
 function Tournament(props) {
@@ -39,12 +39,14 @@ function Tournament(props) {
           </div>
           <div className="tournament__buttons">
               <div className="tournament__youtube_buttons">
-                <TournamentModalLink iconClassName="fa-regular fa-circle-play" label="Запись турнира" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe} openModal={props.openModal} type="youtube"/> 
-                {tournament.links.youtubeIframe2 && <TournamentModalLink iconClassName="fa-regular fa-circle-play" label="Запись турнира ч.2" title={tournament.number + " " +tournament.title} iframe={tournament.links.youtubeIframe2} openModal={props.openModal} type="youtube"/>}
+                <TournamentModalLink iconClassName="fa-regular fa-circle-play" label="Запись турнира" title={tournament.number + " " +tournament.title} content={tournament.links.youtubeIframe} openModal={props.openModal} type="youtube"/>
+                {tournament.links.youtubeIframe2 &&
+                  <TournamentModalLink iconClassName="fa-regular fa-circle-play" label="Запись турнира ч.2" title={tournament.number + " " +tournament.title} content={tournament.links.youtubeIframe2} openModal={props.openModal} type="youtube"/>}
               </div>
-              <TournamentModalLink iconClassName="fa-solid fa-diagram-project" label="Турнирная таблица" title={tournament.number + " " +tournament.title} iframe={tournament.links.tableIframe} openModal={props.openModal} type="challonge" />
-              <TournamentLink href={tournament.links.teams} iconClassName="fa-solid fa-people-group" label="Участники" />
-              <TournamentLink href={tournament.links.photo} iconClassName="fa-regular fa-image" label="Фотоальбом" />
+              <TournamentModalLink iconClassName="fa-solid fa-diagram-project" label="Турнирная таблица" title={tournament.number + " " + tournament.title} content={tournament.links.tableIframe} openModal={props.openModal} type="challonge" />
+              <TournamentModalLink iconClassName="fa-solid fa-people-group" label="Участники" title={tournament.number + " " + tournament.title} openModal={props.openModal} content={tournament.links.teams} type="teams"/>
+              {tournament.links.tableType}
+              <TournamentModalLink iconClassName="fa-regular fa-image" label="Фотоальбом" title={tournament.number + " " + tournament.title} openModal={props.openModal} content={tournament.links.photo} type="photo"/>
           </div>
       </div>
   </div>
@@ -55,17 +57,20 @@ function TournamentsList(props) {
 
   const tournaments = props.tournaments;
 
-  const openModal = (isVisible, props = {}, type = "youtube") => {
+  const openModal = (isVisible, props = {}, type) => {
     setModal(isVisible);
 
     document.body.style.overflow = isVisible ? 'hidden' : '';
-    
+
     modal.title = props.title;
-    switch (type) {
-      case "youtube": modal.iframe = YouTubeFrame(props.iframe); break;
-      case "challonge": modal.iframe = ChallongeFrame(props.iframe); break;
+
+    switch (props.type) {
+      case "youtube": modal.content = YouTubeFrame(props.content); break;
+      case "challonge": modal.content = TableFrame(props.content); break;
+      case "teams": modal.content = TeamsFrame(props.content); break;
+      case "photo": modal.content = PhotoFrame(props.content); break;
     }
-  } 
+  }
 
   const [isModal, setModal] = React.useState(false);
   const [modal] = React.useState({});
@@ -75,7 +80,7 @@ function TournamentsList(props) {
       <Modal
         isVisible={isModal}
         title={modal.title}
-        content={modal.iframe}
+        content={modal.content}
         onClose={() => openModal(false)}
       />
 

@@ -10,20 +10,20 @@ function TournamentLink(props) {
   return React.createElement(
     "a",
     { className: "tournament-button", href: props.href, target: "_blank", disabled: !props.href },
-    React.createElement("i", { "class": props.iconClassName }),
+    React.createElement("i", { className: props.iconClassName }),
     props.label
   );
 }
 
 function TournamentModalLink(props) {
   var buttonClass = "tournament-button";
-  if (!props.iframe) buttonClass += " disable";
+  if (!props.content) buttonClass += " disable";
   return React.createElement(
     "button",
     { className: buttonClass, onClick: function onClick() {
         return props.openModal(true, props);
-      }, disabled: !props.iframe },
-    React.createElement("i", { "class": props.iconClassName }),
+      }, disabled: !props.content },
+    React.createElement("i", { className: props.iconClassName }),
     props.label
   );
 }
@@ -76,12 +76,13 @@ function Tournament(props) {
         React.createElement(
           "div",
           { className: "tournament__youtube_buttons" },
-          React.createElement(TournamentModalLink, { iconClassName: "fa-regular fa-circle-play", label: "\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430", title: tournament.number + " " + tournament.title, iframe: tournament.links.youtubeIframe, openModal: props.openModal, type: "youtube" }),
-          tournament.links.youtubeIframe2 && React.createElement(TournamentModalLink, { iconClassName: "fa-regular fa-circle-play", label: "\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430 \u0447.2", title: tournament.number + " " + tournament.title, iframe: tournament.links.youtubeIframe2, openModal: props.openModal, type: "youtube" })
+          React.createElement(TournamentModalLink, { iconClassName: "fa-regular fa-circle-play", label: "\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430", title: tournament.number + " " + tournament.title, content: tournament.links.youtubeIframe, openModal: props.openModal, type: "youtube" }),
+          tournament.links.youtubeIframe2 && React.createElement(TournamentModalLink, { iconClassName: "fa-regular fa-circle-play", label: "\u0417\u0430\u043F\u0438\u0441\u044C \u0442\u0443\u0440\u043D\u0438\u0440\u0430 \u0447.2", title: tournament.number + " " + tournament.title, content: tournament.links.youtubeIframe2, openModal: props.openModal, type: "youtube" })
         ),
-        React.createElement(TournamentModalLink, { iconClassName: "fa-solid fa-diagram-project", label: "\u0422\u0443\u0440\u043D\u0438\u0440\u043D\u0430\u044F \u0442\u0430\u0431\u043B\u0438\u0446\u0430", title: tournament.number + " " + tournament.title, iframe: tournament.links.tableIframe, openModal: props.openModal, type: "challonge" }),
-        React.createElement(TournamentLink, { href: tournament.links.teams, iconClassName: "fa-solid fa-people-group", label: "\u0423\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0438" }),
-        React.createElement(TournamentLink, { href: tournament.links.photo, iconClassName: "fa-regular fa-image", label: "\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C" })
+        React.createElement(TournamentModalLink, { iconClassName: "fa-solid fa-diagram-project", label: "\u0422\u0443\u0440\u043D\u0438\u0440\u043D\u0430\u044F \u0442\u0430\u0431\u043B\u0438\u0446\u0430", title: tournament.number + " " + tournament.title, content: tournament.links.tableIframe, openModal: props.openModal, type: "challonge" }),
+        React.createElement(TournamentModalLink, { iconClassName: "fa-solid fa-people-group", label: "\u0423\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0438", title: tournament.number + " " + tournament.title, openModal: props.openModal, content: tournament.links.teams, type: "teams" }),
+        tournament.links.tableType,
+        React.createElement(TournamentModalLink, { iconClassName: "fa-regular fa-image", label: "\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C", title: tournament.number + " " + tournament.title, openModal: props.openModal, content: tournament.links.photo, type: "photo" })
       )
     )
   );
@@ -93,18 +94,23 @@ function TournamentsList(props) {
 
   var openModal = function openModal(isVisible) {
     var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "youtube";
+    var type = arguments[2];
 
     setModal(isVisible);
 
     document.body.style.overflow = isVisible ? 'hidden' : '';
 
     modal.title = props.title;
-    switch (type) {
+
+    switch (props.type) {
       case "youtube":
-        modal.iframe = YouTubeFrame(props.iframe);break;
+        modal.content = YouTubeFrame(props.content);break;
       case "challonge":
-        modal.iframe = ChallongeFrame(props.iframe);break;
+        modal.content = TableFrame(props.content);break;
+      case "teams":
+        modal.content = TeamsFrame(props.content);break;
+      case "photo":
+        modal.content = PhotoFrame(props.content);break;
     }
   };
 
@@ -123,7 +129,7 @@ function TournamentsList(props) {
     React.createElement(Modal, {
       isVisible: isModal,
       title: modal.title,
-      content: modal.iframe,
+      content: modal.content,
       onClose: function onClose() {
         return openModal(false);
       }

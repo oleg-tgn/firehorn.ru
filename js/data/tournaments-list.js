@@ -1,5 +1,17 @@
 const tournaments = [
   {
+    "number": "#14",
+    "title": " Благотворительный онлайн-турнир №2",
+    "image": "img/tournament-13.jpg",
+    "date": "11 декабря 2022",
+    "address": "Online",
+    "links": {
+      "youtubeIframe": "https://www.youtube.com/embed/9r_uauOORA8",
+      "tableIframe": "https://challonge.com/ru/fwvr19w9/module",
+      "teams": "",
+    },
+  },
+  {
     "number": "#13",
     "title": " Благотворительный онлайн-турнир №2",
     "image": "img/tournament-13.jpg",
@@ -7,10 +19,9 @@ const tournaments = [
     "address": "Online",
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/9r_uauOORA8",
-      "table": " https://challonge.com/ru/fwvr19w9 ",
       "tableIframe": "https://challonge.com/ru/fwvr19w9/module",
-      "teams": " https://vk.com/firehorn?w=wall-186885826_1367",
-    }
+      "teams": "",
+    },
   },
   {
     "number": "#12",
@@ -20,9 +31,8 @@ const tournaments = [
     "address": "Online",
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/wN8gsn5TbLU",
-      "table": " https://challonge.com/ru/uod1gjgo ",
       "tableIframe": "https://challonge.com/ru/uod1gjgo/module",
-      "teams": " https://vk.com/firehorn?w=wall-186885826_1348 ",
+      "teams": tournamentsTeams[12],
     }
   },
   {
@@ -33,7 +43,7 @@ const tournaments = [
     "address": "Кибер Арена VERSUS, г. Таганрог, Гоголевский 2-1",
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/6f__wvoPTxU",
-      "teams": "https://vk.com/firehorn?w=wall-186885826_1284",
+      "teams": tournamentsTeams[11],
       "photo": "https://vk.com/album-186885826_280488151"
     }
   },
@@ -44,9 +54,8 @@ const tournaments = [
     "date": "13 декабря 2020",
     "address": "Cyber Arena, Ростов-на-Дону, ул. Жданова 2/7, ТЦ \"Левенцовский\"",
     "links": {
-      "table": "https://docs.google.com/spreadsheets/d/162KLZZYS-rXmkzHKCWIPajDDPaTrmg3pEH3BwYLxXAM/edit?usp=sharing",
       "tableIframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSczulGidFIlg57Tq3_mY872Vqxtn9m6JIx4Homdp1Imr9R9OJb4K8_wOoOkAXm2H9kAcUAlYd5uaQq/pubhtml?gid=2049245090&amp;single=true&amp;widget=true&amp;headers=false",
-      "teams": "https://vk.com/firehorn?w=wall-186885826_1164",
+      "teams": tournamentsTeams[10],
       "photo": "https://vk.com/album-186885826_277924269"
     }
   },
@@ -57,7 +66,7 @@ const tournaments = [
     "date": "20 сентября",
     "address": "Legion CyberArena, г. Таганрог, Чехова ул. 322/2",
     "links": {
-      "teams": "https://vk.com/firehorn?w=wall-186885826_943",
+      "teams": tournamentsTeams[9],
       "photo": "https://vk.com/album-186885826_277626335"
     }
   },
@@ -68,7 +77,7 @@ const tournaments = [
     "date": "25 июля 2020",
     "address": "Online",
     "links": {
-      "teams": " https://vk.com/firehorn?w=wall-186885826_885 ",
+      "teams": tournamentsTeams[8],
     }
   },
   {
@@ -79,7 +88,7 @@ const tournaments = [
     "address": "Online",
     "links": {
       // "table": "https://fire-horn.ru/online/3/",
-      "teams": "https://vk.com/firehorn?w=wall-186885826_867",
+      "teams": tournamentsTeams[7],
     }
   },
   {
@@ -89,6 +98,7 @@ const tournaments = [
     "date": "26 апреля 2020",
     "address": "Online",
     "links": {
+      //"teams": tournamentsTeams[6],
       // "table": " https://fire-horn.ru/online/2/index.php ",
       // "tableIframe": "https://challonge.com/ru/rjvj5bhv/module",
     }
@@ -97,11 +107,11 @@ const tournaments = [
       "number": "#5",
       "title": "Oнлайн турнир",
       "image": "img/tournament-5.jpg",
-      "date": "1 марта 2020",
+      "date": "29 февраля 2020",
       "address": "Online",
       "links": {
           "video": "https://vk.com/firehorn?z=video-186885826_456239046%2Fb247c1fb4662de5729%2Fpl_wall_-186885826",
-          "teams": "https://vk.com/firehorn?w=wall-186885826_325",                    
+          "teams": tournamentsTeams[5],
       }
   },
   {
@@ -113,8 +123,8 @@ const tournaments = [
       "links": {
           "youtubeIframe": "https://www.youtube.com/embed/agXoBOBYsIk",
           "youtubeIframe2": "https://www.youtube.com/embed/izmZb0AKYHM",
-          "teams": "https://vk.com/firehorn?w=wall-186885826_249",            
-          "photo": " https://vk.com/album-186885826_271637331"           
+          "teams": tournamentsTeams[4],
+          "photo": " https://vk.com/album-186885826_271637331"
       }
   },
   {
@@ -124,7 +134,7 @@ const tournaments = [
       "date": "11 января 2020",
       "address": "Аудитория Inostudio ИКТИБ ЮФУ, г. Таганрог, Некрасовский пер., 42",
       "links": {
-          "teams": "https://vk.com/firehorn?w=wall-186885826_96",
+          "teams": tournamentsTeams[3],
           "photo": "https://vk.com/album-186885826_271302925"
       }
   },
@@ -136,9 +146,8 @@ const tournaments = [
     "address": "Cyber Сlub, г. Таганрог, Петровская 29/2",
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/1EfGagfDBRQ",
-      "table": "https://challonge.com/ru/rjvj5bhv",
       "tableIframe": "https://challonge.com/ru/rjvj5bhv/module",
-      "teams": "https://vk.com/firehorn?w=wall-186885826_96",
+      "teams": tournamentsTeams[2],
       "photo": "https://vk.com/firehorn?z=album-186885826_270659157"
     }
   },
@@ -150,10 +159,9 @@ const tournaments = [
     "address": "Cyber Сlub, г. Таганрог, Петровская 29/2",
     "links": {
       "youtubeIframe": "https://www.youtube.com/embed/hgYET0rbMxo",
-      "table": "https://challonge.com/ru/1wuf76fr",
       "tableIframe": "https://challonge.com/ru/1wuf76fr/module",
-      "teams": "https://vk.com/lol_tgn?w=wall-186904708_17%2Fall",
-      "photo": "https://vk.com/album-186885826_268453002"
+      "teams": tournamentsTeams[1],
+      "photo": "https://ior.ad/s0Z?iframeHash=viewsteps"
     }
   }
 ];

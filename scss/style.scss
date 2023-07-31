@@ -588,11 +588,26 @@ body {
     &__socials {
         margin: 0 auto;
     }
+
+    .socials__link {
+        font-size: 20px;
+        text-decoration: none;
+
+        i:before {
+            color: #4D4F60;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+    }
 }
 
+.icon-vk,
+.icon-youtube {
+    font-size: 17px;
+}
 
-
-  
 @keyframes appear {
     from {
       opacity: 0;
@@ -612,3 +627,4 @@ body {
 }  
 
 @import 'modal';
+@import 'social-icons';
