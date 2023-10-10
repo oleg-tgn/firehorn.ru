@@ -125,7 +125,7 @@ const tournaments = [
           "youtubeIframe": "https://www.youtube.com/embed/agXoBOBYsIk",
           "youtubeIframe2": "https://www.youtube.com/embed/izmZb0AKYHM",
           "teams": tournamentsTeams[4],
-          "photo": " https://vk.com/album-186885826_271637331"
+          "photo": "https://photos.app.goo.gl/znBjHGiVnsvmkvDr9"
       }
   },
   {
