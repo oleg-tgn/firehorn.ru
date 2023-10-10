@@ -46,7 +46,7 @@ function Tournament(props) {
               <TournamentModalLink iconClassName="fa-solid fa-diagram-project" label="Турнирная таблица" title={tournament.number + " " + tournament.title} content={tournament.links.tableIframe} openModal={props.openModal} type="challonge" />
               <TournamentModalLink iconClassName="fa-solid fa-people-group" label="Участники" title={tournament.number + " " + tournament.title} openModal={props.openModal} content={tournament.links.teams} type="teams"/>
               {tournament.links.tableType}
-              <TournamentModalLink iconClassName="fa-regular fa-image" label="Фотоальбом" title={tournament.number + " " + tournament.title} openModal={props.openModal} content={tournament.links.photo} type="photo"/>
+              <TournamentLink iconClassName="fa-regular fa-image" label="Фотоальбом" title={tournament.number + " " + tournament.title} href={tournament.links.photo} type="photo"/>
           </div>
       </div>
   </div>

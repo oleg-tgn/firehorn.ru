@@ -82,7 +82,7 @@ function Tournament(props) {
         React.createElement(TournamentModalLink, { iconClassName: "fa-solid fa-diagram-project", label: "\u0422\u0443\u0440\u043D\u0438\u0440\u043D\u0430\u044F \u0442\u0430\u0431\u043B\u0438\u0446\u0430", title: tournament.number + " " + tournament.title, content: tournament.links.tableIframe, openModal: props.openModal, type: "challonge" }),
         React.createElement(TournamentModalLink, { iconClassName: "fa-solid fa-people-group", label: "\u0423\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0438", title: tournament.number + " " + tournament.title, openModal: props.openModal, content: tournament.links.teams, type: "teams" }),
         tournament.links.tableType,
-        React.createElement(TournamentModalLink, { iconClassName: "fa-regular fa-image", label: "\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C", title: tournament.number + " " + tournament.title, openModal: props.openModal, content: tournament.links.photo, type: "photo" })
+        React.createElement(TournamentLink, { iconClassName: "fa-regular fa-image", label: "\u0424\u043E\u0442\u043E\u0430\u043B\u044C\u0431\u043E\u043C", title: tournament.number + " " + tournament.title, href: tournament.links.photo, type: "photo" })
       )
     )
   );

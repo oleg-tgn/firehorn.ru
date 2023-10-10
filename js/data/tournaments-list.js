@@ -45,7 +45,7 @@ const tournaments = [
       "youtubeIframe": "https://www.youtube.com/embed/6f__wvoPTxU",
       "tableIframe": "https://challonge.com/ru/akg47co5/module",
       "teams": tournamentsTeams[11],
-      //"photo": "https://vk.com/album-186885826_280488151"
+      "photo": "https://vk.com/album-186885826_280488151"
     }
   },
   {
@@ -57,7 +57,7 @@ const tournaments = [
     "links": {
       "tableIframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSczulGidFIlg57Tq3_mY872Vqxtn9m6JIx4Homdp1Imr9R9OJb4K8_wOoOkAXm2H9kAcUAlYd5uaQq/pubhtml?gid=2049245090&amp;single=true&amp;widget=true&amp;headers=false",
       "teams": tournamentsTeams[10],
-      //"photo": "https://vk.com/album-186885826_277924269"
+      "photo": "https://vk.com/album-186885826_277924269"
     }
   },
   {
@@ -68,7 +68,7 @@ const tournaments = [
     "address": "Legion CyberArena, г. Таганрог, Чехова ул. 322/2",
     "links": {
       "teams": tournamentsTeams[9],
-      //"photo": "https://vk.com/album-186885826_277626335"
+      "photo": "https://vk.com/album-186885826_277626335"
     }
   },
   {
@@ -125,7 +125,7 @@ const tournaments = [
           "youtubeIframe": "https://www.youtube.com/embed/agXoBOBYsIk",
           "youtubeIframe2": "https://www.youtube.com/embed/izmZb0AKYHM",
           "teams": tournamentsTeams[4],
-          //"photo": " https://vk.com/album-186885826_271637331"
+          "photo": " https://vk.com/album-186885826_271637331"
       }
   },
   {
@@ -136,7 +136,7 @@ const tournaments = [
       "address": "Аудитория Inostudio ИКТИБ ЮФУ, г. Таганрог, Некрасовский пер., 42",
       "links": {
           "teams": tournamentsTeams[3],
-          //"photo": "https://vk.com/album-186885826_271302925"
+          "photo": "https://photos.app.goo.gl/iSkqa82DMrgv47mH7"
       }
   },
   {
@@ -149,7 +149,7 @@ const tournaments = [
       "youtubeIframe": "https://www.youtube.com/embed/1EfGagfDBRQ",
       "tableIframe": "https://challonge.com/ru/rjvj5bhv/module",
       "teams": tournamentsTeams[2],
-      //"photo": "https://vk.com/firehorn?z=album-186885826_270659157"
+      "photo": "https://photos.app.goo.gl/Qxe6uuqGNiuJQJ1t5"
     }
   },
   {
@@ -162,7 +162,7 @@ const tournaments = [
       "youtubeIframe": "https://www.youtube.com/embed/hgYET0rbMxo",
       "tableIframe": "https://challonge.com/ru/1wuf76fr/module",
       "teams": tournamentsTeams[1],
-      //"photo": "hhttps://photos.google.com/share/AF1QipPm3VuMVm2TsTayZA2KgZKzKdlrtkj853kLaxeezSLcyBMLtHj4cYx6_2CjNaApVA?key=S2VFdlZrX0t4RTg3bUpUcUFLZ0ZlTWMyWkk2VkNB"
+      "photo": "https://photos.app.goo.gl/Qmz9tMiBoDDthCfm7"
     }
   }
 ];
